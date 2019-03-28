@@ -1,0 +1,75 @@
+@media screen and (max-width: 1380px) {
+  .nav__contacts-tel {
+    font-size: 18px; }
+  .nav__list-item {
+    font-size: 14px; }
+    .nav__list-item:not(:last-child) {
+      margin-bottom: 5px; } }
+
+@media screen and (max-width: 992px) {
+  .nav {
+    position: fixed;
+    width: 100%;
+    height: auto;
+    bottom: auto;
+    padding-top: 10px;
+    padding-bottom: 10px; }
+    .nav__top {
+      height: 50px;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: justify;
+      -webkit-justify-content: space-between;
+          -ms-flex-pack: justify;
+              justify-content: space-between;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+          -ms-flex-align: center;
+              align-items: center;
+      padding-right: 60px; }
+    .nav__logo {
+      margin-bottom: 0;
+      max-width: 120px; }
+    .nav__menu {
+      height: 0;
+      display: none !important; }
+      .nav__menu.active {
+        height: auto;
+        display: -webkit-box !important;
+        display: -webkit-flex !important;
+        display: -ms-flexbox !important;
+        display: flex !important;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -webkit-flex-direction: column;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+            -ms-flex-align: center;
+                align-items: center;
+        text-align: center;
+        padding-bottom: 20px; }
+    .nav__list {
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+          -ms-flex-align: center;
+              align-items: center; }
+    .nav__hamburger {
+      display: block; }
+  .content {
+    width: 100%;
+    padding-top: 70px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column; }
+  .fancybox-container {
+    z-index: 7; } }
+
+@media screen and (max-width: 768px) {
+  .section__ttl {
+    font-size: 25px; } }

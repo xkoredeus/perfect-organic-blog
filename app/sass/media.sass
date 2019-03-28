@@ -1,0 +1,49 @@
+// $grid-breakpoints: (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px)
+@media screen and (max-width: 1380px)
+	.nav__contacts-tel
+		font-size: 18px
+	.nav__list-item
+		font-size: 14px
+		&:not(:last-child)
+			margin-bottom: 5px
+@media screen and (max-width: 992px)
+	.nav
+		position: fixed
+		width: 100%
+		height: auto
+		bottom: auto
+		padding-top: 10px
+		padding-bottom: 10px
+		&__top
+			height: 50px
+			display: flex
+			justify-content: space-between
+			align-items: center
+			padding-right: 60px
+		&__logo
+			margin-bottom: 0
+			max-width: 120px
+		&__menu
+			height: 0
+			display: none !important
+			&.active
+				height: auto
+				display: flex !important
+				flex-direction: column
+				align-items: center
+				text-align: center
+				padding-bottom: 20px
+		&__list
+			align-items: center
+		&__hamburger
+			display: block
+	.content
+		width: 100%
+		padding-top: 70px
+		flex-direction: column
+	.fancybox-container
+		z-index: 7
+@media screen and (max-width: 768px)
+	.section__ttl
+		font-size: 25px
+// @media screen and (max-width: 576px)
