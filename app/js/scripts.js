@@ -1,26 +1,4 @@
 $(function() {
-	$('.card__slider').owlCarousel({
-		items: 1,
-		dots: true,
-		autoplay: true,
-		// responsive : {
-		//   0   : {
-		//       items: 1
-		//   },
-		//   380 : {
-		//       items: 1
-		//   },
-		//   480 : {
-		//       items: 1
-		//   },
-		//   768 : {
-		//       items: 3
-		//   },
-		//   1040 : {
-		//       items: 4
-		//   }
-		// }
-	});
 	$('.new-product__cnt').owlCarousel({
 		nav: true,
 		items: 1,
@@ -29,8 +7,8 @@ $(function() {
 	});
 	// tabs
 	$(document).ready(function () {
-		$(".tabs__content-item").hide();
-		$(".tabs__container div.tabs__content-item.active-tab").show();
+		$('.tabs__content-item').hide();
+		$('.tabs__container div.tabs__content-item.active-tab').show();
 		$('ul.tabs__list > li').click(function () {
 			if (!($(this).hasClass('active'))) {
 				var thisLi = $(this);
@@ -40,34 +18,35 @@ $(function() {
 			}
 		});
 	});
-	//категории товаров
-	$('.content-menu__wrp').on('click', function(){
-		$(this).find('.content-menu').toggleClass('active');
+	//questions block
+	$('.questions__item-descr').hide();
+	$('.questions__item-top').on('click', function() {
+		$(this).parent('.questions__item').toggleClass('active');
+		$(this).siblings('.questions__item-descr').slideToggle();
 	});
-	$('.content-menu__cross').on('click', function(){
-		$('.content-menu__wrp').toggleClass('active');
-	});
-	//страница оформления заказа
-	$(".order__item_hide").hide();
-	$('.order__btn-next').on('click', function(e){
-		e.preventDefault();
-		$(this).closest('.order__item').next('.order__item_hide').slideToggle();
-	});
-	//стилизация input type number
-	$( '.cart__item-quantity' ).on( 'click', '.cart__item-quantity-minus, .cart__item-quantity-plus', function () {
-	var input = $( this ).siblings( '.cart__item-quantity-num' );
-		if ( (input.val() > 1) && ($( this ).hasClass( 'cart__item-quantity-minus' ) ) ) {
-				input.val( +input.val() - 1 );
-		} else if ( $( this ).hasClass( 'cart__item-quantity-plus' ) ) {
-			input.val( +input.val() + 1 );
-		};
+	$('.questions__item-wrp:not(:first-child)').hide();
+	$('.questions__btn').on('click', function(){
+		$('.questions__item-wrp:nth-child(2)').slideToggle();
+		$(this).toggleClass('active');
+		if ($(this).hasClass('active')) {
+			$(this).html('Скрыть');
+		} else {
+			$(this).html('Показать еще')
+		}
 	});
 	//mobile menu
 	if ( $(window).width() < 992 ) {
-		$(".nav__hamburger").on('click',function() {
+		$('.nav__hamburger').on('click', function() {
 			$(this).toggleClass("active");
 			$('.nav__menu').toggleClass('active');
 			$('body').toggleClass("fixed");
+		});
+		$('.nav__list-item_sub').on('click', function(){
+			$(this).toggleClass('active').siblings().removeClass('active');
+
+		});
+		$('.nav__list-item_sub > a').on('click', function(e){
+			e.preventDefault();
 		});
 	}
 });
